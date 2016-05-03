@@ -36,9 +36,7 @@ public class ModelCard {
 	}
 	
 	private int returnNumCard() {
-		int entero = numero%11;
-		//double numCard = (numero/10.0)-entero;
-		//int o = (int) (numCard*10);
+		int entero = numero%10;
 		
 		switch (entero) {
 		case 8:
@@ -47,11 +45,10 @@ public class ModelCard {
 		case 9:
 			entero = 11;
 			break;
-		case 10:
+		case 0:
 			entero = 12;
 			break;
 		}
-		JOptionPane.showMessageDialog(null, entero+" "+"numero");
 		return entero;
 	}
 	

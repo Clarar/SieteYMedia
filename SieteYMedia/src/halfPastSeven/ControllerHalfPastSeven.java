@@ -41,7 +41,6 @@ public class ControllerHalfPastSeven implements ActionListener {
 			break;
 		}
 		
-		JOptionPane.showMessageDialog(null, "point: "+point);
 		return point;
 	}
 	
