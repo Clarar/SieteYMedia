@@ -76,7 +76,6 @@ public class ControllerHalfPastSeven implements ActionListener {
 	
 	
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (((JButton)e.getSource()).getName() == "plantar") {
 			if (played2.getSumPoint() == 0) {
