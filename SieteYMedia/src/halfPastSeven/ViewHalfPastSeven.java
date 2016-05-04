@@ -84,12 +84,15 @@ public class ViewHalfPastSeven extends JFrame {
 		main_center.add(played1);
 		main_center.add(played2);
 		
-		//Panel sur
+				//Panel sur
+		
+		
 		main_south = new JPanel();
 		main_south.setLayout(new GridLayout(1, 3, 10,10));
 		main_south.setBackground(Color.decode("#0B6121"));
 		
-		//panel de dar carta
+				//panel de dar carta
+		
 		JPanel south_button_dar = new JPanel(new GridLayout(1,1,1,1));
 		south_button_dar.setBackground(Color.decode("#0B6121"));
 
@@ -100,8 +103,9 @@ public class ViewHalfPastSeven extends JFrame {
 		jbtn_dar.setBorderPainted(false);
 		
 		south_button_dar.add(jbtn_dar);
+				
+				//panel de plantarse
 		
-		//panel de plantarse
 		JPanel south_button_plantar = new JPanel(new GridLayout(1,1,1,1));
 		south_button_plantar.setBackground(Color.decode("#0B6121"));
 		
@@ -115,7 +119,8 @@ public class ViewHalfPastSeven extends JFrame {
 		
 		south_button_plantar.add(jbtn_plantar);
 		
-		//Panel de detalles del jugador que esta jugando
+				//Panel de detalles del jugador que esta jugando
+		
 		JPanel south_detail = new JPanel(new GridLayout(2,2,2,2));
 		south_detail.setBackground(Color.decode("#0B6121"));
 		south_detail.setBorder(BorderFactory.createEtchedBorder());
@@ -132,7 +137,12 @@ public class ViewHalfPastSeven extends JFrame {
 		point_played.setText("--   ");
 		point_played.setFont(myfont);
 		point_played.setForeground(Color.WHITE);
-		//muestra el nombre del ganador.
+		
+		
+		
+				//muestra el nombre del ganador.
+		
+		
 		winner = new JLabel();
 		winner.setFont(myfont_20);
 		winner.setForeground(Color.WHITE);
@@ -155,8 +165,8 @@ public class ViewHalfPastSeven extends JFrame {
 	}
 	
 	public void newCardsPlayers(){
-		this.cards1 = new ArrayList<JPanel>();//Cartas jugados 1
-		this.cards2 = new ArrayList<JPanel>();//cartas jugador 2
+		this.cards1 = new ArrayList<JPanel>();		//Cartas jugados 1
+		this.cards2 = new ArrayList<JPanel>();		//cartas jugador 2
 	}
 	
 	public void setPlantarEnabled(boolean enabled){

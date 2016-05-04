@@ -10,8 +10,14 @@ import javax.swing.JPanel;
 public class ViewCard extends JPanel {
 	
 	private Image card;
+	private int y;
+	private int x;
 	
 	public ViewCard(Image card){
+		this(card,75,115);
+	}
+	
+	public ViewCard(Image card, int x, int y){
 
 		setLayout(new GridLayout(1, 1,5,5));	
 		this.card = card;
@@ -22,7 +28,7 @@ public class ViewCard extends JPanel {
 	protected void paintComponent(Graphics g) {
 	    super.paintComponent(g);
 	    
-	    g.drawImage(card,0,0,75, 115, null);
+	    g.drawImage(card,0,0,x, y, null);
 	}
 	
 }
