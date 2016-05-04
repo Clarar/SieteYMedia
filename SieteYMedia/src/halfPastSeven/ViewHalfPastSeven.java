@@ -7,11 +7,13 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.util.ArrayList;
 
+import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class ViewHalfPastSeven extends JFrame {
@@ -34,8 +36,7 @@ public class ViewHalfPastSeven extends JFrame {
 	
 	public ViewHalfPastSeven(){
 		
-		this.cards1 = new ArrayList<JPanel>();//Cartas jugados 1
-		this.cards2 = new ArrayList<JPanel>();//cartas jugador 2
+		newCardsPlayers();
 		this.cardsRearward = new ArrayList<JPanel>();//reverso de las cartas
 		
 		JPanel main = new JPanel();
@@ -110,7 +111,7 @@ public class ViewHalfPastSeven extends JFrame {
 		jbtn_plantar.setIcon(new ImageIcon("baraja/red-button.jpg"));
 		jbtn_plantar.setRolloverIcon(new ImageIcon("baraja/red-button2.jpg"));
 		jbtn_plantar.setBorderPainted(false);
-		jbtn_plantar.setEnabled(false);
+		
 		
 		south_button_plantar.add(jbtn_plantar);
 		
@@ -151,6 +152,11 @@ public class ViewHalfPastSeven extends JFrame {
 		
 		add(main);
 		
+	}
+	
+	public void newCardsPlayers(){
+		this.cards1 = new ArrayList<JPanel>();//Cartas jugados 1
+		this.cards2 = new ArrayList<JPanel>();//cartas jugador 2
 	}
 	
 	public void setPlantarEnabled(boolean enabled){
@@ -252,6 +258,13 @@ public class ViewHalfPastSeven extends JFrame {
 	public void setWinner(String played){
 		winner.setText(played);
 	}
+	
+	public int newGame(){
+		int confirmar = JOptionPane.showConfirmDialog(null,
+									"¿Desea Empezar una nueva partida?", "Siete y media", JOptionPane.YES_NO_OPTION);
+		
+		return confirmar;
+	}
 
 	public void setController(ControllerHalfPastSeven controller){
 		jbtn_plantar.addActionListener(controller);
@@ -260,9 +273,25 @@ public class ViewHalfPastSeven extends JFrame {
 	
 	public void runGame(){
 		setSize(800, 600);
-		setTitle("7 y media");
+		setTitle("Siete y media");
 	    setLocationRelativeTo(null);   
 	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setVisible(true);
+	}
+
+	public JButton getJbtn_plantar() {
+		return jbtn_plantar;
+	}
+	
+	public JButton getJbtn_dar() {
+		return jbtn_dar;
+	}
+	
+	public void resetPlayed2Card(){
+		played2_card.removeAll();
+	}
+	
+	public void resetPlayed1Card(){
+		played1_card.removeAll();
 	}
 }

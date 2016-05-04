@@ -13,7 +13,7 @@ public class ModelDeckOfCards {
 	public ModelDeckOfCards(){
 		this.deck = new ArrayList<ModelCard>();
 		this.deck_rearward = new ArrayList<ModelCard>();
-		this.top = 0;
+		setTop(0);
 		for (int i = 1; i <= 40; i++) {
 			deck.add(new ModelCard(i));
 			deck_rearward.add(new ModelCard());
@@ -34,5 +34,9 @@ public class ModelDeckOfCards {
 	
 	public void incrementTop(){
 		top++;
+	}
+	
+	public void setTop(int top){
+		this.top = top;
 	}
 }
