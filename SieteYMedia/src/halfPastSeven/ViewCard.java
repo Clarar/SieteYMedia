@@ -28,7 +28,7 @@ public class ViewCard extends JPanel {
 	protected void paintComponent(Graphics g) {
 	    super.paintComponent(g);
 	    
-	    g.drawImage(card,0,0,x, y, null);
+	    g.drawImage(card,0,0,75, 115, null);
 	}
 	
 }
